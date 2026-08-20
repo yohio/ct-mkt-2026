@@ -1,0 +1,27 @@
+{
+  "name": "rollbar-triage",
+  "version": "1.0.0",
+  "description": "Triages Rollbar errors into an actionable work list: root-causes each item against the local code, cross-references the issue tracker for existing tickets, and separates real bugs from noise instead of reporting raw occurrence counts.",
+  "author": {
+    "name": "Yohai Ararat"
+  },
+  "keywords": [
+    "rollbar",
+    "error-tracking",
+    "triage",
+    "observability",
+    "rails"
+  ],
+  "userConfig": {
+    "defaultProject": {
+      "type": "string",
+      "title": "Default Rollbar project",
+      "description": "Project to target when none is given in the arguments. The Rollbar MCP server runs in multi-project mode, so every call needs an explicit project — when this is unset the command asks rather than guessing, since triaging the wrong project silently returns a plausible but irrelevant work list."
+    },
+    "defaultEnvironment": {
+      "type": "string",
+      "title": "Default environment",
+      "description": "Environment to filter items to when none is given. Falls back to production when unset."
+    }
+  }
+}

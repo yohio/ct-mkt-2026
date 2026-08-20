@@ -1,0 +1,52 @@
+{
+  "name": "yararat-tooling",
+  "owner": {
+    "name": "Yohai Ararat"
+  },
+  "metadata": {
+    "description": "Stack-agnostic engineering tooling extracted from a working Claude Code configuration. Company-specific knowledge is supplied via plugin config, not bundled.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "docs",
+      "source": "./plugins/docs",
+      "description": "Generate and refresh documentation from the code itself — any project, any stack. Detects the project, stack, and audience segment before writing, and traces every factual claim to code read during the run."
+    },
+    {
+      "name": "code-quality",
+      "source": "./plugins/code-quality",
+      "description": "Run RuboCop and the relevant RSpec specs against only the files changed on your branch, then stage a commit message for review. Infers which specs matter from the implementation files you touched."
+    },
+    {
+      "name": "ticket-context",
+      "source": "./plugins/ticket-context",
+      "description": "Loader agents that gather issue-tracker context and prior local investigation notes for a ticket, so review and planning workflows start with history instead of a blank slate. Dependency-only — provides agents, no commands."
+    },
+    {
+      "name": "pr-review",
+      "source": "./plugins/pr-review",
+      "description": "Senior-level pull request review for Rails codebases — reviews the diff for correctness, Rails patterns, testing, security, and performance; re-reviews after feedback; decides which review comments need code changes versus replies; and drafts the PR description."
+    },
+    {
+      "name": "tailwind",
+      "source": "./plugins/tailwind",
+      "description": "Principles-driven Bootstrap-to-Tailwind migration for Rails views: scopes the work, audits the existing cascade per element, plans the translation, implements it behind approval gates, and verifies the result adversarially and visually with Playwright."
+    },
+    {
+      "name": "ticket-workflow",
+      "source": "./plugins/ticket-workflow",
+      "description": "Takes a ticket from investigation to plan: runs a spike that reviews standards and the codebase before designing, produces a phased work plan or a presentation-ready spike plan with estimates, drafts tickets in your team's story format, and archives findings so later sessions start with the history."
+    },
+    {
+      "name": "rails-testing",
+      "source": "./plugins/rails-testing",
+      "description": "Writes behaviour-focused RSpec tests and I18n locale files for Rails: tests at the highest useful level of abstraction, exercises the full stack over mocking internals, covers failure paths rather than only the happy one, and structures locale files to match the view and model tree."
+    },
+    {
+      "name": "rollbar-triage",
+      "source": "./plugins/rollbar-triage",
+      "description": "Triages Rollbar errors into an actionable work list: root-causes each item against the local code, cross-references the issue tracker for existing tickets, and separates real bugs from noise instead of reporting raw occurrence counts."
+    }
+  ]
+}

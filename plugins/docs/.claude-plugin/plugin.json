@@ -1,0 +1,27 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "Generate and refresh documentation from the code itself — any project, any stack. Detects the project, stack, and audience segment before writing, and traces every factual claim to code read during the run.",
+  "author": {
+    "name": "Yohai Ararat"
+  },
+  "keywords": [
+    "documentation",
+    "docs",
+    "technical-writing",
+    "code-analysis",
+    "stack-agnostic"
+  ],
+  "userConfig": {
+    "projectProfilesRoot": {
+      "type": "string",
+      "title": "Project profiles directory",
+      "description": "Directory of project-profile files recording per-repository segmentation facts (site or tenant identifiers, view conventions, tenancy model). Read during audience detection to avoid re-deriving them each run. When unset, the agent searches the repository and — only if segmentation would change what it writes — asks where those details live, offering to scaffold a profile from its template rather than guessing an audience."
+    },
+    "teamStandardsRoot": {
+      "type": "string",
+      "title": "Team standards docs root",
+      "description": "Root of your team's documentation standards. Outranks this plugin's own standards layer wherever the two disagree; both are outranked by the code itself, since documentation is the artifact nobody re-verifies. When unset, the plugin layer applies and that is stated in the final report."
+    }
+  }
+}

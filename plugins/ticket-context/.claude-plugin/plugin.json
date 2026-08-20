@@ -1,0 +1,27 @@
+{
+  "name": "ticket-context",
+  "version": "1.0.0",
+  "description": "Loader agents that gather issue-tracker context and prior local investigation notes for a ticket, so review and planning workflows start with history instead of a blank slate. Dependency-only — provides agents, no commands.",
+  "author": {
+    "name": "Yohai Ararat"
+  },
+  "keywords": [
+    "jira",
+    "atlassian",
+    "issue-tracker",
+    "context",
+    "code-review"
+  ],
+  "userConfig": {
+    "jiraBaseUrl": {
+      "type": "string",
+      "title": "Jira base URL",
+      "description": "Your Atlassian instance, e.g. https://yourcompany.atlassian.net — used to build browse links. Leave empty to derive it from the API response instead."
+    },
+    "priorWorkRoot": {
+      "type": "string",
+      "title": "Prior work notes directory",
+      "description": "Directory holding local spike, investigation, and work-plan notes. Scanned recursively for the ticket key in filenames and file contents. When unset, the loader reports that plainly and the calling command asks where the notes live, or offers to create the directory."
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "pr-review",
+  "version": "1.0.0",
+  "description": "Senior-level pull request review for Rails codebases — reviews the diff for correctness, Rails patterns, testing, security, and performance; re-reviews after feedback; decides which review comments need code changes versus replies; and drafts the PR description.",
+  "author": {
+    "name": "Yohai Ararat"
+  },
+  "keywords": [
+    "code-review",
+    "pull-request",
+    "rails",
+    "ruby",
+    "security"
+  ],
+  "dependencies": [
+    "code-quality",
+    "ticket-context"
+  ],
+  "userConfig": {
+    "baseBranch": {
+      "type": "string",
+      "title": "Base branch",
+      "description": "Branch to diff against. Leave empty to auto-detect from origin/HEAD, falling back to main then master."
+    },
+    "checklistPath": {
+      "type": "string",
+      "title": "Review checklist file",
+      "description": "Path to an extended review checklist the reviewer reads in addition to its built-in criteria. When unset, /review-pr searches the repository, then asks where it lives and offers to scaffold one from the plugin template. Choosing to review without it is stated in the report, so review depth is never silently reduced."
+    },
+    "codingStandardsUrl": {
+      "type": "string",
+      "title": "Coding standards URL",
+      "description": "Link to your team's coding standards, used in the generated PR requirements checklist. When unset, /write-pr-description looks for one in the repository and then asks once; declining omits that checklist line rather than emitting a broken link."
+    }
+  }
+}

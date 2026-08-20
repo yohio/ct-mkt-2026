@@ -1,0 +1,36 @@
+{
+  "name": "ticket-workflow",
+  "version": "1.0.0",
+  "description": "Takes a ticket from investigation to plan: runs a spike that reviews standards and the codebase before designing, produces a phased work plan or a presentation-ready spike plan with estimates, drafts tickets in your team's story format, and archives findings so later sessions start with the history.",
+  "author": {
+    "name": "Yohai Ararat"
+  },
+  "keywords": [
+    "planning",
+    "spike",
+    "jira",
+    "estimation",
+    "rails",
+    "investigation"
+  ],
+  "dependencies": [
+    "ticket-context"
+  ],
+  "userConfig": {
+    "notesRoot": {
+      "type": "string",
+      "title": "Notes archive directory",
+      "description": "Where spike reports and work plans are written, as {root}/{TICKET}-spike.md and {root}/{TICKET}/WORK_PLAN.md. Set this to the same directory as ticket-context's priorWorkRoot so that what this plugin archives is what later runs find. When unset, the command asks before writing and never writes outside the repository without permission."
+    },
+    "teamStandardsRoot": {
+      "type": "string",
+      "title": "Team standards docs root",
+      "description": "Root of your team's coding-standards documentation, read before planning so the plan follows house patterns rather than generic ones. When unset, the command looks for standards in the repository, then asks once; declining means the plan is based on observed code alone, which is stated in the output."
+    },
+    "ticketTemplatePath": {
+      "type": "string",
+      "title": "Story template file",
+      "description": "Your team's story format, reproduced section-for-section when drafting a ticket. When unset, /write-ticket searches the repository and offers to scaffold one from the plugin template; a generic structure is used only as a last resort, and the output says so."
+    }
+  }
+}

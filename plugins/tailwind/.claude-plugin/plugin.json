@@ -1,0 +1,34 @@
+{
+  "name": "tailwind",
+  "version": "1.0.0",
+  "description": "Principles-driven Bootstrap-to-Tailwind migration for Rails views: scopes the work, audits the existing cascade per element, plans the translation, implements it behind approval gates, and verifies the result adversarially and visually with Playwright.",
+  "author": {
+    "name": "Yohai Ararat"
+  },
+  "keywords": [
+    "tailwind",
+    "bootstrap",
+    "css",
+    "migration",
+    "rails",
+    "viewcomponent",
+    "playwright"
+  ],
+  "userConfig": {
+    "conventionsPath": {
+      "type": "string",
+      "title": "Codebase conventions file",
+      "description": "File recording where views, layout partials, components, helpers, and Tailwind configs live in this repository, plus the module casing the autoloader requires. When unset, /migrate-to-tailwind searches the repository, then asks and offers to scaffold one from the plugin template. Highest-stakes setting here: wrong module casing fails at boot, and editing a Tailwind config the view does not load produces no visible change."
+    },
+    "teamStandardsRoot": {
+      "type": "string",
+      "title": "Team standards docs root",
+      "description": "Root of your team's authoritative coding-standards documentation. It outranks this plugin's own standards layer whenever the two disagree. When unset, the command looks for standards in the repository, then asks once; if there are none, the plugin layer becomes authoritative and that is stated in the report."
+    },
+    "notesRoot": {
+      "type": "string",
+      "title": "Migration notes directory",
+      "description": "Where resume documents and saved migration plans are written when you stop mid-migration. When unset, the command asks before writing and defaults to .claude/migration-notes/ inside the repository."
+    }
+  }
+}

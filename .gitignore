@@ -1,0 +1,42 @@
+# ── macOS metadata ────────────────────────────────────────────────────────────
+# AppleDouble sidecars. macOS writes these for any file carrying extended
+# attributes when the target filesystem cannot store them natively — which is
+# exactly what happens on an SMB share. They must never be committed: Claude
+# Code refreshes a marketplace by renaming directories, and a leftover ._ file
+# makes that rename fail with ENOTEMPTY, wedging the install for whoever clones
+# this repo. Regenerate-and-ignore is the only safe posture here.
+._*
+.DS_Store
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+.fseventsd
+.TemporaryItems
+.DocumentRevisions-V100
+
+# ── Windows / NAS artefacts (this repo may live on an SMB volume) ─────────────
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+System Volume Information/
+
+# ── Node ─────────────────────────────────────────────────────────────────────
+# plugins/tailwind/scripts ships package.json and package-lock.json on purpose;
+# installed dependencies are not committed.
+node_modules/
+npm-debug.log*
+.npm/
+
+# ── Claude Code runtime artefacts ────────────────────────────────────────────
+.in_use/
+*.tmp
+*.tmp.*
+
+# ── Never commit the private content layer ───────────────────────────────────
+# Company-specific knowledge is supplied through plugin config at runtime, not
+# bundled. If a content/ or src/ directory ever appears here, it arrived by
+# mistake.
+content/
+src/

@@ -1,0 +1,28 @@
+{
+  "name": "rails-testing",
+  "version": "1.0.0",
+  "description": "Writes behaviour-focused RSpec tests and I18n locale files for Rails: tests at the highest useful level of abstraction, exercises the full stack over mocking internals, covers failure paths rather than only the happy one, and structures locale files to match the view and model tree.",
+  "author": {
+    "name": "Yohai Ararat"
+  },
+  "keywords": [
+    "rails",
+    "rspec",
+    "testing",
+    "ruby",
+    "i18n",
+    "localization"
+  ],
+  "userConfig": {
+    "testingStandardsPath": {
+      "type": "string",
+      "title": "Team testing standards file",
+      "description": "Your team's testing standards, read before writing and authoritative over this agent's defaults wherever the two disagree. Teams differ sharply on which level to test at, request versus controller specs, factories versus fixtures, and acceptable mocking. When unset, the agent uses its defaults and reports which conventions it assumed."
+    },
+    "localeStandardsPath": {
+      "type": "string",
+      "title": "Team localization standards file",
+      "description": "Your team's I18n conventions, authoritative over this plugin's defaults. Key nesting depth, where dynamic database-backed translations live versus static ones, and pluralization conventions all vary by team. When unset, the agent uses its defaults and reports which conventions it assumed."
+    }
+  }
+}
