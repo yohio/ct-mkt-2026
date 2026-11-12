@@ -47,6 +47,11 @@
       "name": "rollbar-triage",
       "source": "./plugins/rollbar-triage",
       "description": "Triages Rollbar errors into an actionable work list: root-causes each item against the local code, cross-references the issue tracker for existing tickets, and separates real bugs from noise instead of reporting raw occurrence counts."
+    },
+    {
+      "name": "git-safety",
+      "source": "./plugins/git-safety",
+      "description": "Keeps git history in the user's hands: blocks `git commit` and `git push` from Claude and its subagents in every shell form, while leaving reads and searches alone. Claude hands over the staging command and commit message instead."
     }
   ]
 }

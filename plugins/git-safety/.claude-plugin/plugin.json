@@ -1,0 +1,15 @@
+{
+  "name": "git-safety",
+  "version": "1.0.0",
+  "description": "Keeps git history in the user's hands: a PreToolUse hook blocks `git commit` and `git push` from Claude and its subagents in every form — after `&&`, with `-C`, inside `bash -c` or `eval` — while leaving reads and searches alone. Claude hands over the staging command and commit message instead.",
+  "author": {
+    "name": "Yohai Ararat"
+  },
+  "keywords": [
+    "git",
+    "hooks",
+    "safety",
+    "commit",
+    "push"
+  ]
+}

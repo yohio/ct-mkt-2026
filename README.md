@@ -1,6 +1,6 @@
 # Claude Code plugin marketplace
 
-Eight stack-agnostic engineering plugins for [Claude Code](https://claude.com/claude-code).
+Nine stack-agnostic engineering plugins for [Claude Code](https://claude.com/claude-code).
 
 Company- and project-specific knowledge is **not bundled**. Each plugin that needs such
 knowledge reads it from configuration, and where a missing fact would change its output,
@@ -33,6 +33,7 @@ claude plugin details docs
 | `ticket-workflow` | Takes a ticket from investigation to plan: spike, phased work plan or estimated spike plan, ticket drafting, and archives findings for later sessions. | `notesRoot`, `teamStandardsRoot`, `ticketTemplatePath` |
 | `rails-testing` | Writes behaviour-focused RSpec tests and I18n locale files. Tests at the highest useful level of abstraction and covers failure paths, not just the happy one. | `testingStandardsPath`, `localeStandardsPath` |
 | `rollbar-triage` | Triages Rollbar errors into an actionable work list: root-causes each item against local code, cross-references the tracker, separates real bugs from noise. | `defaultProject`, `defaultEnvironment` |
+| `git-safety` | A `PreToolUse` hook that blocks `git commit` and `git push` from Claude and its subagents in every shell form (after `&&`, with `-C`, inside `bash -c` or `eval`), leaving reads and searches alone. Claude hands over the staging command and commit message instead. | — |
 
 ### Dependencies
 
@@ -41,6 +42,7 @@ claude plugin details docs
 - `ticket-workflow`'s `/ticket-pipeline` additionally needs the `codex` plugin for its
   adversarial stage, and stops with a clear message if it is absent
 - `rollbar-triage` and `ticket-context` need their respective MCP servers connected
+- `git-safety` needs `python3` on `PATH`; if the hook cannot run, Claude Code lets the command through
 
 ## Configuration
 
