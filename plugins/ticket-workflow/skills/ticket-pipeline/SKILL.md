@@ -39,7 +39,7 @@ If `$CODEX_ROOT` is empty or the setup output reports Codex missing/unauthentica
 claude plugin list 2>/dev/null | grep -q "pr-review" && echo "pr-review present" || echo "pr-review MISSING"
 ```
 
-If it is missing, **stop** and tell the user to run `claude plugin install pr-review-tooling`. Do not substitute your own review for Stage 4 — the whole point is that it is independent of the loop that produced the code, and a self-review defeats it. This is deliberately not declared as a hard plugin dependency, so that `/start-ticket` and `/run-spike` stay usable without installing the review stack.
+If it is missing, **stop** and tell the user to run `claude plugin install pr-review@yararat-tooling`. Do not substitute your own review for Stage 4 — the whole point is that it is independent of the loop that produced the code, and a self-review defeats it. This is deliberately not declared as a hard plugin dependency, so that `/start-ticket` and `/run-spike` stay usable without installing the review stack.
 
 **0b. Load JIRA context.** Launch the `ticket-context:jira-context-loader` agent — pass the ticket id if provided, else let it extract from the branch; pass `depth: full`. If no ticket can be identified (branch is `master`/`main` or has no ticket pattern), ask the user which ticket to run. Display the summary.
 
@@ -125,8 +125,6 @@ This review must be **independent** of the loop that produced the code — do no
    - **(c)** within **JIRA scope** — cite each acceptance criterion and whether it's met, and flag anything beyond scope.
 
 Present the review report. If it surfaces must-fix issues, offer to loop back into a targeted fix (execution subagent at `EXEC_MODEL`, then a re-review) rather than declaring done.
-
-> For a heavier gate, note that `/wwbs` (the full staged self-review) is available as a drop-in alternative to `pr-reviewer` here.
 
 ---
 

@@ -99,7 +99,7 @@ R="/Volumes/AraratWorks/Work Related/claude-plugins"
 
 # manifests
 claude plugin validate "$R"
-for p in docs code-quality ticket-context pr-review tailwind ticket-workflow rails-testing rollbar-triage; do
+for p in docs code-quality ticket-context pr-review tailwind ticket-workflow rails-testing rollbar-triage git-safety; do
   printf "%-17s " "$p"; claude plugin validate "$R/plugins/$p" 2>&1 | grep -qE '✔' && echo ok || echo FAIL
 done
 

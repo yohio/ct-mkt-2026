@@ -1,6 +1,6 @@
 {
   "name": "ticket-workflow",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Takes a ticket from investigation to plan: runs a spike that reviews standards and the codebase before designing, produces a phased work plan or a presentation-ready spike plan with estimates, drafts tickets in your team's story format, and archives findings so later sessions start with the history.",
   "author": {
     "name": "Yohai Ararat"
